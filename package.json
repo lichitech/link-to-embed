@@ -5,7 +5,19 @@
 	"description": "A JavaScript library for parsing and generating oEmbed-compatible embedded content from URLs",
 	"author": "Gavin Luo <lunt.luo@gmail.com>",
 	"license": "MIT",
-	"keywords": [],
+	"homepage": "https://github.com/lichitech/link-to-embed",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lichitech/link-to-embed.git"
+	},
+	"bugs": {
+		"url": "https://github.com/lichitech/link-to-embed/issues"
+	},
+	"keywords": [
+		"oembed",
+		"iframe",
+		"url"
+	],
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
