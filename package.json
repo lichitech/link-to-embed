@@ -1,0 +1,42 @@
+{
+	"name": "@lichi.tech/link-to-embed",
+	"version": "0.1.0",
+	"packageManager": "pnpm@10.20.0",
+	"description": "A JavaScript library for parsing and generating oEmbed-compatible embedded content from URLs",
+	"author": "Gavin Luo <lunt.luo@gmail.com>",
+	"license": "MIT",
+	"keywords": [],
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"build": "unbuild",
+		"prepack": "unbuild",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@extractus/oembed-extractor": "^4.0.9",
+		"cross-fetch": "^4.1.0",
+		"image-size": "^2.0.2"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^6.2.0",
+		"@types/node": "^24.10.0",
+		"eslint": "^9.38.0",
+		"eslint-plugin-format": "^1.0.2",
+		"typescript": "~5.9.3",
+		"unbuild": "^3.6.1",
+		"vitest": "^4.0.8"
+	}
+}
