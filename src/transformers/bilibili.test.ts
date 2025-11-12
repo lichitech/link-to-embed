@@ -1,15 +1,15 @@
 import { it } from 'vitest'
-import bilibiliTransformer from './bilibili'
+import transformer from './bilibili'
 
 it('bilibili', async ({ expect }) => {
 	const url = 'https://www.bilibili.com/video/BV1ys411472E?t=3.4&p=4'
-	for (let index = 0; index < bilibiliTransformer.patterns.length; index++) {
-		const pattern = bilibiliTransformer.patterns[index]
+	for (let index = 0; index < transformer.patterns.length; index++) {
+		const pattern = transformer.patterns[index]
 		const matches = pattern.exec(url)
 		if (matches === null)
 			continue
 
-		const info = await bilibiliTransformer.transform(url, matches)
+		const info = await transformer.transform(url, matches)
 		expect(info).toEqual({
 			version: '1.0',
 			type: 'video',
