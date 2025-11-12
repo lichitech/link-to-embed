@@ -36,6 +36,7 @@
 		"json5",
 		"jsonc",
 		"yaml",
+		"github-actions-workflow",
 		"toml",
 		"xml",
 		"gql",
