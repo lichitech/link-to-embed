@@ -14,14 +14,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: package.json
-          cache: npm
+          cache: pnpm
 
       - name: Generate GitHub Changelog
-        run: npx changelogithub
+        run: pnpx changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -48,9 +51,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm build
 
       - name: Publish to npm
         run: pnpm -r publish --provenance --access public --no-git-checks
