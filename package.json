@@ -3,8 +3,11 @@
 	"version": "0.1.1",
 	"packageManager": "pnpm@10.20.0",
 	"description": "A JavaScript library for parsing and generating oEmbed-compatible embedded content from URLs",
-	"author": "Gavin Luo <lunt.luo@gmail.com>",
-	"license": "MIT",
+	"author": {
+		"name": "Gavin Luo",
+		"email": "lunt.luo@gmail.com"
+	},
+	"license": "GPL-3.0-only",
 	"homepage": "https://github.com/lichitech/link-to-embed",
 	"repository": {
 		"type": "git",

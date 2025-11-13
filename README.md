@@ -4,7 +4,7 @@ A JavaScript library for parsing and generating oEmbed-compatible embedded conte
 
 [![npm version](https://img.shields.io/npm/v/@lichi.tech/link-to-embed.svg)](https://www.npmjs.com/package/@lichi.tech/link-to-embed)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL-3.0-only](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/licenses/gpl-3-0)
 
 ## ✨ Features
 
