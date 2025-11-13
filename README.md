@@ -125,10 +125,10 @@ The library automatically detects and handles oEmbed-compatible platforms:
 
 For platforms **without oEmbed support**, we provide built-in transformers as a fallback:
 
-| Platform           | URL Pattern                          | Type  | Note                                  |
-| ------------------ | ------------------------------------ | ----- | ------------------------------------- |
-| Bilibili           | `bilibili.com/video/*`<br>`b23.tv/*` | Video | Fallback for platforms without oEmbed |
-| _More coming soon_ | -                                    | -     | -                                     |
+| Platform      | URL Pattern                          | Type  | Note                               |
+| ------------- | ------------------------------------ | ----- | ---------------------------------- |
+| Bilibili      | `bilibili.com/video/*`<br>`b23.tv/*` | Video | Grab information from Bilibili api |
+| Tencent Video | `v.qq.com/x/page/*`                  | Video |                                    |
 
 ### Custom Transformers
 
