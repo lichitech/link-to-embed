@@ -1,6 +1,6 @@
 {
 	"name": "@lichi.tech/link-to-embed",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"packageManager": "pnpm@10.20.0",
 	"description": "A JavaScript library for parsing and generating oEmbed-compatible embedded content from URLs",
 	"author": {
