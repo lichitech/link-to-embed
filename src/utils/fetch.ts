@@ -16,10 +16,11 @@ async function proxyFetch(url: string, options: FetchOptions = {}): Promise<Resp
 }
 
 async function fetch(url: string, options: FetchOptions = {}): Promise<Response> {
+	const isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined'
 	const { proxy, ...fetchOptions } = {
-		headers: {
-			'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0',
-		},
+		headers: isBrowser
+			? {}
+			: { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0' },
 		proxy: null,
 		agent: null,
 		signal: null,
