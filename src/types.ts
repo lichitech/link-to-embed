@@ -1,10 +1,18 @@
-import type { FetchOptions as ExtractorFetchOptions, LinkTypeData as LinkEmbedData, Params, PhotoTypeData as PhotoEmbedData, RichTypeData as RichEmbedData, VideoTypeData as VideoEmbedData } from '@extractus/oembed-extractor'
+import type {
+	FetchOptions as ExtractorFetchOptions,
+	LinkTypeData as LinkEmbedData,
+	OembedData,
+	Params,
+	PhotoTypeData as PhotoEmbedData,
+	RichTypeData as RichEmbedData,
+	VideoTypeData as VideoEmbedData,
+} from '@extractus/oembed-extractor'
 
 export type { LinkEmbedData, PhotoEmbedData, RichEmbedData, VideoEmbedData }
 
 export type FetchOptions = Omit<ExtractorFetchOptions, 'signal'> & { signal?: AbortSignal }
 
-export type EmbedData = Partial<LinkEmbedData | PhotoEmbedData | RichEmbedData | VideoEmbedData>
+export type EmbedData = OembedData | LinkEmbedData | PhotoEmbedData | RichEmbedData | VideoEmbedData
 
 export interface Transformer {
 	/** Unique key identifier for the transformer */
