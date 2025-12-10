@@ -33,7 +33,7 @@ export default defineTransformer({
 			autoplay: '0',
 		}
 
-		const { bvid, aid, query } = matches.groups ?? {}
+		const { bvid, aid, query = '' } = matches.groups ?? {}
 		const { t, p } = Object.fromEntries(query.split('&').map((item: string) => item.split('=')))
 		if (bvid)
 			params.bvid = bvid
@@ -65,19 +65,21 @@ export default defineTransformer({
 			height: 360,
 		}
 
-		const { data } = await getJson<BiliBiliApiResponse>(`https://api.bilibili.com/x/web-interface/view?${bvid ? `bvid=${bvid}` : `aid=${aid}`}`, fetchOptions)
+		try {
+			const { data } = await getJson<BiliBiliApiResponse>(`https://api.bilibili.com/x/web-interface/view?${bvid ? `bvid=${bvid}` : `aid=${aid}`}`, fetchOptions)
+			result.title = data.title
 
-		result.title = data.title
+			result.author_name = data.owner.name
+			result.author_url = `https://space.bilibili.com/${data.owner.mid}`
 
-		result.author_name = data.owner.name
-		result.author_url = `https://space.bilibili.com/${data.owner.mid}`
-
-		result.thumbnail_url = data.pic
-		const { width, height } = await getImageSize(result.thumbnail_url, fetchOptions)
-		result.thumbnail_width = width
-		result.thumbnail_height = height
-		result.width = data.dimension.width
-		result.height = data.dimension.height
+			result.thumbnail_url = data.pic
+			const { width, height } = await getImageSize(result.thumbnail_url, fetchOptions)
+			result.thumbnail_width = width
+			result.thumbnail_height = height
+			result.width = data.dimension.width
+			result.height = data.dimension.height
+		}
+		catch {}
 
 		return result
 	},

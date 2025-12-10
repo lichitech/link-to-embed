@@ -11,12 +11,7 @@ export async function link2Embed(url: string, options: LinkToEmbedOptions = {}):
 		const oEmbedData = await oEmbedExtract(url, oEmbedParams, fetchOptions)
 		return oEmbedData
 	}
-	catch (err) {
-		const isOEembedLinkNotFoundError = err instanceof Error && err.message === 'No oEmbed link found'
-		if (!isOEembedLinkNotFoundError) {
-			throw err
-		}
-	}
+	catch {}
 
 	// Fallback to internal compatible transformers
 	return transform(url, options)
